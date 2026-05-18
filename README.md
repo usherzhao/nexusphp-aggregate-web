@@ -78,7 +78,7 @@ cp config.example.json config.json
 
 ### 站点配置
 
-在 `sites` 数组中添加 NexusPHP 站点：
+可在后台管理直接配置或者在 `sites` 数组中添加 NexusPHP 站点：
 
 ```json
 {
