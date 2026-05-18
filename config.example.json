@@ -1,0 +1,39 @@
+{
+  "port": 3001,
+  "timeoutMs": 60000,
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+  "checkIntervalMs": 600000,
+  "searchMaxPages": 5,
+  "downloadEnabled": true,
+  "syncTransmissionBeforeCheck": true,
+  "transmissionNetworkFailureAsSuccess": false,
+  "transmissionUrl": "http://127.0.0.1:9091/transmission/rpc",
+  "transmissionUsername": "",
+  "transmissionPassword": "",
+  "aiEnabled": false,
+  "aiBaseUrl": "https://api.openai.com/v1",
+  "aiApiKey": "",
+  "aiModel": "gpt-4o-mini",
+  "aiTimeoutMs": 30000,
+  "webSearchEnabled": false,
+  "webSearchProvider": "serper",
+  "webSearchBaseUrl": "https://google.serper.dev/search",
+  "webSearchApiKey": "",
+  "webSearchMaxResults": 5,
+  "sites": [
+    {
+      "id": "pthome",
+      "name": "PTHOME",
+      "siteUrl": "https://www.pthome.net/",
+      "cookie": "",
+      "enabled": true
+    },
+    {
+      "id": "btschool",
+      "name": "BTSCHOOL",
+      "siteUrl": "https://pt.btschool.club/",
+      "cookie": "",
+      "enabled": true
+    }
+  ]
+}

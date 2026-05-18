@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>聚合搜索 - NexusPHP 聚合查询助手</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div>
+        <h1>聚合搜索</h1>
+        <p>搜索多个 NexusPHP 站点并整理候选版本，选择标题后返回订阅页创建追番任务。</p>
+        <p class="nav-row">
+          <a class="nav-link" href="/">订阅追番</a>
+          <a class="nav-link" href="/ai.html">AI 订阅助手</a>
+          <a class="nav-link" href="/config.html">系统配置</a>
+        </p>
+      </div>
+      <div class="status-card">
+        <strong>使用方式</strong>
+        <div class="status-card-body">先搜索候选标题，再点击“带回订阅页”，订阅页会自动填入站点、剧名和标题模板。</div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>搜索候选版本</h2>
+      <form id="searchForm" class="form-grid">
+        <label>
+          <span>关键词</span>
+          <input name="keyword" placeholder="例如：低智商犯罪" required>
+        </label>
+        <label>
+          <span>Transmission 保存路径</span>
+          <input name="downloadDir" list="downloadDirOptions" placeholder="/mnt/nas/电视剧" required>
+          <datalist id="downloadDirOptions"></datalist>
+        </label>
+        <fieldset class="site-choice wide" id="searchSites">
+          <legend>搜索站点</legend>
+          <div>加载中...</div>
+        </fieldset>
+        <button type="submit">搜索</button>
+      </form>
+      <div id="searchMessage" class="parse-card wide">输入关键词后搜索所有已启用站点。</div>
+      <div id="searchResults" class="candidate-list"></div>
+    </section>
+  </main>
+  <div id="subscriptionResultModal" class="modal-backdrop" hidden>
+    <div class="modal-card">
+      <h3 id="subscriptionResultModalTitle">操作结果</h3>
+      <p id="subscriptionResultModalMessage" class="modal-message info"></p>
+      <div class="modal-actions">
+        <button id="subscriptionResultModalCloseButton" type="button">知道了</button>
+      </div>
+    </div>
+  </div>
+  <script src="/search.js"></script>
+</body>
+</html>

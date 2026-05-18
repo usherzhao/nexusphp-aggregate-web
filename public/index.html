@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NexusPHP 订阅追番</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div>
+        <h1>NexusPHP 订阅追番</h1>
+        <p>按标题模板订阅追番，发现新集后自动提交到 Transmission 下载。</p>
+        <p class="nav-row">
+          <a class="nav-link" href="/search.html">聚合搜索</a>
+          <a class="nav-link" href="/ai.html">AI 订阅助手</a>
+          <a class="nav-link" href="/config.html">系统配置</a>
+        </p>
+      </div>
+      <details class="status-card" id="configStatus" open>
+        <summary>系统状态</summary>
+        <div class="status-card-body">加载中...</div>
+      </details>
+    </section>
+
+    <section class="panel">
+      <h2>新增订阅</h2>
+      <form id="subscriptionForm" class="form-grid">
+        <label>
+          <span>订阅站点</span>
+          <select name="site" required></select>
+        </label>
+        <label>
+          <span>需要搜索的剧名</span>
+          <input name="searchName" placeholder="例如：低智商犯罪" required>
+        </label>
+        <label class="wide">
+          <span>第一集标题模板</span>
+          <textarea name="firstTitle" rows="4" placeholder="Low IQ Crime 2025 S01E01 2160p WEB-DL H.265 AAC-Group" required></textarea>
+        </label>
+        <label>
+          <span>Transmission 保存路径</span>
+          <input name="downloadDir" list="downloadDirOptions" placeholder="/mnt/nas/电视剧" required>
+          <datalist id="downloadDirOptions"></datalist>
+        </label>
+        <label>
+          <span>检查间隔（分钟）</span>
+          <input name="checkIntervalMinutes" type="number" min="1" step="1" placeholder="留空使用全局配置">
+        </label>
+        <div class="parse-card wide" id="parsePreview">填写第一集标题后会自动解析。</div>
+        <button type="submit">创建订阅</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <div class="section-header">
+        <h2>订阅列表</h2>
+        <button id="refreshButton" type="button">刷新</button>
+      </div>
+      <div id="subscriptions" class="subscription-list"></div>
+    </section>
+
+    <section class="panel">
+      <h2>运行日志</h2>
+      <div id="logs" class="logs"></div>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>

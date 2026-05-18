@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 订阅助手 - NexusPHP 聚合查询助手</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div>
+        <h1>AI 订阅助手</h1>
+        <p>用自然语言描述想订阅的剧集和版本偏好，AI 会解析意图，再搜索 NexusPHP 站点整理候选版本。</p>
+        <p class="nav-row">
+          <a class="nav-link" href="/">订阅追番</a>
+          <a class="nav-link" href="/search.html">聚合搜索</a>
+          <a class="nav-link" href="/config.html">系统配置</a>
+        </p>
+      </div>
+      <details class="status-card" id="aiStatus" open>
+        <summary>AI 状态</summary>
+        <div class="status-card-body">加载中...</div>
+      </details>
+    </section>
+
+    <section class="panel">
+      <div class="section-header">
+        <h2>临时对话上下文</h2>
+        <button id="clearAiContextButton" type="button" class="secondary">清空上下文</button>
+      </div>
+      <div id="aiChatHistory" class="ai-chat-history">
+        <div class="empty-state">当前没有上下文。你可以连续输入，例如先说“帮我订阅低智商犯罪”，再说“要 2025 年 2160p，不要合集”。</div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>自然语言搜索</h2>
+      <form id="aiAssistForm" class="form-grid">
+        <label class="wide">
+          <span>你想订阅什么？</span>
+          <textarea name="message" rows="4" placeholder="例如：帮我订阅低智商犯罪，2025 年，2160p，H265，不要合集" required></textarea>
+        </label>
+        <label>
+          <span>Transmission 保存路径</span>
+          <input name="downloadDir" list="downloadDirOptions" placeholder="/mnt/nas/电视剧" required>
+          <datalist id="downloadDirOptions"></datalist>
+        </label>
+        <label>
+          <span>检查间隔（分钟）</span>
+          <input name="checkIntervalMinutes" type="number" min="1" step="1" placeholder="留空使用全局配置">
+        </label>
+        <button type="submit">AI 解析并搜索</button>
+      </form>
+      <div id="aiMessage" class="parse-card wide">输入你的订阅需求后开始。</div>
+    </section>
+
+    <section class="panel">
+      <h2>AI 解析结果</h2>
+      <div id="intentPreview" class="parse-card">暂无解析结果。</div>
+    </section>
+
+    <section class="panel">
+      <h2>AI 推荐候选</h2>
+      <div id="aiCandidateResults" class="candidate-list"></div>
+    </section>
+  </main>
+
+  <div id="subscriptionResultModal" class="modal-backdrop" hidden>
+    <div class="modal-card">
+      <h3 id="subscriptionResultModalTitle">订阅创建结果</h3>
+      <p id="subscriptionResultModalMessage" class="modal-message info"></p>
+      <div class="modal-actions">
+        <button id="subscriptionResultModalCloseButton" type="button">知道了</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/ai.js"></script>
+</body>
+</html>
