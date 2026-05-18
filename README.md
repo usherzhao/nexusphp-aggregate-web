@@ -1,13 +1,18 @@
 # NexusPHP 聚合查询助手
 
 聚合多个 NexusPHP 站点的搜索、订阅追番、AI 智能推荐，并通过 Transmission 自动下载。
+## 图片介绍
+<img width="1872" height="948" alt="1" src="https://github.com/user-attachments/assets/fa453a2b-6123-4179-932f-97943450d520" />
+<img width="1750" height="2486" alt="4" src="https://github.com/user-attachments/assets/a2f8676b-565a-4d00-94b0-b86013c000f2" />
+<img width="1750" height="6699" alt="3" src="https://github.com/user-attachments/assets/5852887c-43f7-4a0f-8d6b-d672aa705568" />
+<img width="1872" height="948" alt="2" src="https://github.com/user-attachments/assets/dc044ce9-9e16-4bb4-a8e2-9e258f845c7b" />
 
 ## 功能
 
 - **聚合搜索** — 同时搜索多个 NexusPHP 站点，按标题模板自动分组候选版本
 - **订阅追番** — 设置第一集标题模板，定时检查并自动下载后续集数
 - **AI 订阅助手** — 自然语言描述需求，AI 解析标题并搜索匹配种子（支持联网搜索）
-- **Transmission 自动下载** — 匹配到的种子自动推送到 Transmission
+- **Transmission 自动下载** — 匹配到的种子自动推送到 Transmission,自动同步下载进度信息
 - **多站点管理** — 在配置页统一管理所有 NexusPHP 站点的 Cookie 和参数
 
 ## 页面说明
