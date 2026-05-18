@@ -1,3 +1,4 @@
+本项目积极参与并认可 [linux.do社区](linux.do)
 # NexusPHP 聚合查询助手
 
 聚合多个 NexusPHP 站点的搜索、订阅追番、AI 智能推荐，并通过 Transmission 自动下载。
